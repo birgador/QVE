@@ -20,8 +20,8 @@ P=np.array([[1,1,1,1],[1,1j,-1,-1j],[1,-1,1,-1],[1,-1j,-1,1j]])
 def QVE(H):
     U=H
     d=U.shape[0]
-    list
-    for i in range(d):
+    twolev=[]
+    for i in range(d-2):
         if i==1:
             break
         for j in range(i+1,d):
@@ -33,6 +33,7 @@ def QVE(H):
                 s=-b.conj()/r
                 U_i[i,i], U_i[i,j] =c,-s
                 U_i[j,i], U_i[j,j] =s.conj(),c.conj()
+                twolev.append(
                 
                 U=np.dot(U_i,U)
                 print(U_i)
